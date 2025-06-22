@@ -1,0 +1,20 @@
+import {notFound} from "next/navigation";
+import {getNewsItem} from "@/lib/news";
+
+/**
+ * - 동적 라우트 안의 중첩된 페이지 처리시에는,
+ *   동적라우트의 slug 값을 사용할 수 있다
+ */
+export default async function ImagePage({params}) {
+
+  const newsItemSlug = params.slug;
+  const newsItem = await getNewsItem( newsItemSlug );
+  if ( !newsItem ){
+    notFound();
+  }
+  return (
+    <div className="fullscreen-image">
+      <img src={`/images/news/${ newsItem.image }`} alt={newsItem.title} />
+    </div>
+  );
+}
