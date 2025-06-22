@@ -2,7 +2,7 @@ import Header from '@/components/header';
 import './globals.css';
 
 export const metadata = {
-  title: '부하테스트_1',
+  title: '부하테스트_2',
   description: '부하테스트를 실행하는 페이지입니다',
 };
 
