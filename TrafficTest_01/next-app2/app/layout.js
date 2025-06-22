@@ -9,7 +9,7 @@ export const metadata = {
 /**
  * - ISR 형태로 1초마다 갱신
  */
-export const revalidate = 120;
+export const revalidate = 60;
 
 export default function RootLayout({ children }) {
   return (
