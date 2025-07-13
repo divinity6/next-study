@@ -1,0 +1,11 @@
+config:
+  # http://ec2-43-203-15-221.ap-northeast-2.compute.amazonaws.com - revalidate=120
+  # http://ec2-43-201-244-219.ap-northeast-2.compute.amazonaws.com - revalidate=1
+  target: "http://ec2-43-203-15-221.ap-northeast-2.compute.amazonaws.com"
+  phases:
+    - duration: 70            # 1분간 테스트
+      arrivalRate: 600         # 초당 300명 접속 (t2.micro에게는 매우 버거움)
+scenarios:
+  - flow:
+      - get:
+          url: "/feed"
